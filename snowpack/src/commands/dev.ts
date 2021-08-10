@@ -621,7 +621,7 @@ export async function startServer(
       if (!fileLocationExists) {
         throw new NotFoundError(reqPath, [attemptedFileLoc]);
       }
-      let foundType = path.extname(reqPath);
+      let foundType = path.extname(resourcePath);
       if (!foundType && attemptedFileLoc.endsWith('.html')) foundType = '.html';
       if (IS_DOTFILE_REGEX.test(reqPath)) foundType = '';
       foundFile = {
